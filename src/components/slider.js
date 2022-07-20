@@ -1,5 +1,6 @@
-import { Box, Grid, Container, Typography, Button } from "@mui/material";
-import { useState } from "react";
+import { Box, Grid, Container, Typography, Button, Zoom } from "@mui/material";
+
+import { useEffect, useState } from "react";
 import Arrow from "../icons/arrow";
 
 export default function Slider() {
@@ -28,6 +29,18 @@ export default function Slider() {
     },
   ];
 
+  function onClickNext() {
+    setCurrentSlide((currentSlide + 1) % slideContents.length);
+    console.log(currentSlide);
+  }
+
+  function onClickPrev() {
+    setCurrentSlide(
+      (currentSlide + slideContents.length - 1) % slideContents.length
+    );
+    console.log(currentSlide);
+  }
+
   return (
     <Container
       maxWidth="xl"
@@ -46,31 +59,64 @@ export default function Slider() {
         justifyContent="space-evenly"
         alignItems="flex-start"
         maxWidth="33.33333%"
-        marginRight="32px"
+        marginRight="48px"
       >
-        <Typography variant="h2" sx={{ marginTop: "32px" }}>
+        <Typography
+          variant="h3"
+          sx={{
+            marginTop: "32px",
+            transition:
+              "opacity 329ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 219ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;",
+          }}
+        >
           {slideContents[currentSlide].title}
         </Typography>
         <Typography marginTop="28px" variant="body2">
           {slideContents[currentSlide].body}
         </Typography>
         <Grid item display="flex" paddingTop="100px">
-          <Button style={{ marginRight: "24px" }}>
+          <Button style={{ marginRight: "24px" }} onClick={() => onClickPrev()}>
             <Arrow transform={180} />
           </Button>
-          <Button>
+          <Button onClick={() => onClickNext()}>
             <Arrow />
           </Button>
         </Grid>
       </Grid>
 
-      <Box sx={{ maxWidth: "66.66666%" }}>
+      <Box sx={{ maxWidth: "66.66666%", position: "relative" }}>
         <img
-          width="75%"
+          src="https://www.goodsted.com/_next/static/media/iphone-empty.f9fb9077.png"
+          style={{ position: "absolute", height: "100%", zIndex: 1 }}
+        />
+        <img
+          width="250px"
           src={slideContents[currentSlide].img}
           alt={slideContents[currentSlide].title}
-          style={{ border: "2px solid #e6e6e6" }}
+          style={{
+            marginLeft: "15px",
+          }}
+          className="active"
         />
+
+        {slideContents.map((slide, index) => {
+          if (index != currentSlide) {
+            return (
+              <img
+                width="250px"
+                src={slide.img}
+                alt={slide.title}
+                style={{
+                  border: "5px solid #fff",
+                }}
+                key={index}
+                className={
+                  index === (currentSlide + 3) % 4 ? "inactive" : "half-active"
+                }
+              />
+            );
+          }
+        })}
       </Box>
     </Container>
   );

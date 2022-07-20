@@ -59,4 +59,10 @@ body {
   border-radius: 10px;
 }
 
+.inactive{
+  display: none;
+}
 
+.half-active{
+  opacity: 60%;
+}

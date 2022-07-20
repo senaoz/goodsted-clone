@@ -1,4 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
+import TestimonialSlider from "./slider";
 
 export default function Testimonials() {
   return (
@@ -25,7 +26,7 @@ export default function Testimonials() {
         >
           Hear what our members, clients and partners say about the benefits.
         </Typography>
-        <Box className="testimonials-card"></Box>
+        <TestimonialSlider />
       </Container>
     </>
   );
