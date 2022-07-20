@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { theme } from "./theme";
+import { Container, ThemeProvider } from "@mui/material";
+import MenuBar from "./components/menuBar";
+
+import Hero from "./components/hero";
+import FirmLogos from "./components/hero/firmLogos";
+import Section from "./components/section";
+import DiscoverSection from "./components/discoverSection";
+import Slider from "./components/slider";
+import Plans from "./components/plans";
+import Testimonials from "./components/testimonials/testimonials";
+import TestimonialNumbers from "./components/testimonials/testimonialNumbers";
+import PostsList from "./components/posts";
+import ActionSection from "./components/actionSection";
+import Footer from "./components/footer";
+import FooterLogos from "./components/footer/logos";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <MenuBar />
+      <Container maxWidth="xl">
+        <Hero />
+        <FirmLogos />
+      </Container>
+      <Section />
+      <DiscoverSection />
+      <Slider />
+      <Plans />
+      <div style={{ backgroundColor: "#FEF6F3" }}>
+        <Testimonials />
+        <TestimonialNumbers />
+      </div>
+      <PostsList />
+      <ActionSection />
+      <Footer />
+    </ThemeProvider>
   );
 }
 
