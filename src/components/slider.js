@@ -108,6 +108,7 @@ export default function Slider() {
                 alt={slide.title}
                 style={{
                   border: "5px solid #fff",
+                  borderRadius: "20px",
                 }}
                 key={index}
                 className={
