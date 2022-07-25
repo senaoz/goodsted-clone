@@ -1,9 +1,10 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import TestimonialSlider from "./slider";
+import TestimonialNumbers from "./testimonialNumbers";
 
 export default function Testimonials() {
   return (
-    <>
+    <div style={{ backgroundColor: "#FEF6F3" }}>
       <Container
         maxWidth="xl"
         sx={{
@@ -27,7 +28,8 @@ export default function Testimonials() {
           Hear what our members, clients and partners say about the benefits.
         </Typography>
         <TestimonialSlider />
+        <TestimonialNumbers />
       </Container>
-    </>
+    </div>
   );
 }

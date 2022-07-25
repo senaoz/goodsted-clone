@@ -1,19 +1,11 @@
-import * as React from "react";
 import Button from "@mui/material/Button";
 
-import {
-  AppBar,
-  Container,
-  Stack,
-  Toolbar,
-  Typography,
-  Box,
-} from "@mui/material";
+import { AppBar, Container, Stack, Toolbar, Typography } from "@mui/material";
 import GoodstedLogo from "../../icons/goodsted-logo";
 
 import MenuPopover from "./popper";
 
-export default function MenuBar() {
+export default function Header() {
   const headersData = [
     {
       label: "Solutions",
@@ -83,6 +75,7 @@ export default function MenuBar() {
     <AppBar
       position="sticky"
       color="inherit"
+      elevation={0}
       sx={{ paddingY: 1, borderBottom: "1px solid", borderColor: "#EFF0F1" }}
     >
       <Container maxWidth="xl">
@@ -92,10 +85,8 @@ export default function MenuBar() {
             {headersData.map((header, index) => {
               if (!header.icon) {
                 return (
-                  <Button>
-                    <Typography key={header.label} variant="h6">
-                      {header.label}
-                    </Typography>
+                  <Button key={header.label + index}>
+                    <Typography variant="h6">{header.label}</Typography>
                   </Button>
                 );
               } else {
@@ -103,6 +94,7 @@ export default function MenuBar() {
                   <MenuPopover
                     label={header.label}
                     children={header.children}
+                    key={header.label + index}
                   />
                 );
               }

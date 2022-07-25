@@ -1,6 +1,6 @@
-import { Box, Grid, Container, Typography, Button, Zoom } from "@mui/material";
+import { Box, Grid, Container, Typography, Button } from "@mui/material";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Arrow from "../icons/arrow";
 
 export default function Slider() {
@@ -87,6 +87,7 @@ export default function Slider() {
       <Box sx={{ maxWidth: "66.66666%", position: "relative" }}>
         <img
           src="https://www.goodsted.com/_next/static/media/iphone-empty.f9fb9077.png"
+          alt="iphone"
           style={{ position: "absolute", height: "100%", zIndex: 1 }}
         />
         <img
@@ -100,7 +101,7 @@ export default function Slider() {
         />
 
         {slideContents.map((slide, index) => {
-          if (index != currentSlide) {
+          if (index !== currentSlide) {
             return (
               <img
                 width="250px"

@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 
-export default function Plans() {
+export default function PlansSection() {
   const plans = [
     {
       label: "Impact Challenge",

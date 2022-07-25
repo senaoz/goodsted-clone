@@ -7,8 +7,6 @@ import { grey } from "@mui/material/colors";
 import { Box } from "@mui/material";
 
 export default function MenuPopover(props) {
-  console.log(props);
-
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -46,7 +44,7 @@ export default function MenuPopover(props) {
           <Box display="flex" flexDirection="column">
             {props.children.map((child, index) => {
               return (
-                <Box display="flex" alignItems="center">
+                <Box display="flex" alignItems="center" key={child + index}>
                   <img
                     src={child.icon}
                     width="35px"
