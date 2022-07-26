@@ -15,8 +15,10 @@ export default function SelectOtherProps() {
   };
 
   return (
-    <Box>
-      <Typography variant="h5">Select</Typography>
+    <Box sx={{ marginBottom: "2em" }}>
+      <Typography variant="h5" sx={{ marginBottom: "1em" }}>
+        Select
+      </Typography>
       <FormControl sx={{ m: 1, minWidth: 120 }} disabled>
         <InputLabel>Age</InputLabel>
         <Select

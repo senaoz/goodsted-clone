@@ -64,7 +64,12 @@ export default function HorizontalLinearStepper() {
       borderColor="text.secondary"
       border="2px solid"
       marginY="0 2em 2em 2em"
-      sx={{ width: "100%", padding: "2em" }}
+      sx={{
+        width: "100%",
+        padding: "2em",
+        marginBottom: "2em",
+        marginTop: "1em",
+      }}
     >
       <Stepper activeStep={activeStep}>
         {steps.map((label, index) => {
