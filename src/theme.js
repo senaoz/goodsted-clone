@@ -19,6 +19,7 @@ export const theme = createTheme({
       default: "#fff",
     },
   },
+
   typography: {
     fontFamily: "Poppins",
     fontSize: 16,
@@ -60,9 +61,20 @@ export const theme = createTheme({
       lineHeight: 1.5,
       textTransform: "none",
     },
+    a: {
+      textDecoration: "none",
+    },
   },
 
   shape: {
     borderRadius: 4,
+  },
+
+  props: {
+    MuiLink: {
+      underline: "none",
+      underlineNone: true,
+      color: "text.primary",
+    },
   },
 });

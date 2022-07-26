@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
 
 body {
   margin: 0;
   color: #1c2c2e;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', 'Red Hat Display', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -13,12 +14,20 @@ body {
   padding-left: 28px;
   text-align: center;
 }
+
+.MuiBadge-root{
+  margin-right: 10px !important;
+}
 .firmLogoImage{
   width: 100%;
   object-fit: contain;
 }
-
-
+h1, h2, h3, h4, p, span {
+  margin: 0.3em 0 !important;
+}
+ h5 ,  h6{
+  margin: 1em 0 0.5em !important;
+}
 
 .MuiButton-endIcon{
   margin-left: auto !important;
@@ -51,6 +60,7 @@ body {
   border-radius: 8px;
   margin: 24px 10px;
 }
+
 .testimonials-card{
   display: flex !important;
   padding: 10px;
@@ -59,10 +69,22 @@ body {
   border-radius: 10px;
 }
 
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+  background: #eaeaea;
+  line-height: 2em;
+  border-radius: 4px;
+}
 .inactive{
   display: none;
 }
 
 .half-active{
   opacity: 60%;
+}
+
+a {
+  text-decoration: none;
+  color: #1c2c2e;
 }

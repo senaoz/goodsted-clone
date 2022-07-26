@@ -3,7 +3,8 @@ import Button from "@mui/material/Button";
 import { AppBar, Container, Stack, Toolbar, Typography } from "@mui/material";
 import GoodstedLogo from "../../icons/goodsted-logo";
 
-import MenuPopover from "./popper";
+import MenuPopover from "./popover";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const headersData = [
@@ -13,9 +14,9 @@ export default function Header() {
       icon: true,
       children: [
         {
-          title: "Impact Challenge",
+          title: "Playground",
           body: "Team building for social impact",
-          href: "#",
+          href: "/playground",
           icon: "https://www.goodsted.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fgoodsted%2Fimage%2Fupload%2Fv1606332138%2Fhealth-wellbeing-1.png&w=128&q=75",
         },
         {
@@ -80,7 +81,9 @@ export default function Header() {
     >
       <Container maxWidth="xl">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <GoodstedLogo />
+          <Link to="/">
+            <GoodstedLogo />
+          </Link>
           <Stack direction="row" spacing={7}>
             {headersData.map((header, index) => {
               if (!header.icon) {

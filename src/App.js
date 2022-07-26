@@ -7,7 +7,7 @@ import TestimonialsSection from "./components/testimonials";
 import PostsList from "./components/posts";
 import ActionSection from "./components/actionSection";
 
-function App() {
+function Home() {
   return (
     <>
       <Hero />
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
